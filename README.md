@@ -25,3 +25,9 @@ int main(int argc, char **argv) {
 
 }
 ```
+
+## Usage
+```bash
+$make
+$./main https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf teste.pdf
+```
