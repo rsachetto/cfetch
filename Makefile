@@ -1,3 +1,13 @@
+all: libshared libstatic
+	gcc -o main main.c -lcurl -L. -lcfetch
 
-all:
-	gcc -o main main.c cfetch.c -lcurl
+libshared:
+	gcc -fPIC -shared -o libcfetch.so cfetch.c -lcurl
+
+libstatic:
+	gcc -c cfetch.c
+	ar rcs libcfetch.a cfetch.o
+
+clean:
+	rm -f main
+

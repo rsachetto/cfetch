@@ -5,7 +5,6 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <unistd.h>
-#include <stdbool.h>
 #include <curl/curl.h>
 
 #include "cfetch.h"
@@ -41,6 +40,7 @@ char * cfetch(char *url, size_t *len) {
         .ptr = NULL,
         .len = 0
     };
+
     curl_easy_setopt(curl, CURLOPT_URL, url);
     curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
@@ -57,5 +57,4 @@ char * cfetch(char *url, size_t *len) {
 
     *len = s.len;
     return s.ptr;
-
 }
