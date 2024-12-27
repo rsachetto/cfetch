@@ -1,5 +1,5 @@
 # cfetch
-Simple fetch function using curl
+Simple fetch function using libcurl
 
 ## Example
 ```c
